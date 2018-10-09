@@ -4,6 +4,10 @@ const lifeDash = document.querySelector(".lifeDash");
 
 const container = document.getElementById("container");
 const btnStart = document.querySelector(".btnStart");
+
+btnStart.addEventListener('click',startGame);
+
+
 let animationGame = requestAnimationFrame(playGame);
 
 let gamePlay = false;
@@ -21,3 +25,9 @@ function playGame() {
     }
     animationGame = requestAnimationFrame(playGame);        
 }
+
+function startGame() {
+    gamePlay=true;
+}
+
+gamePlay = false
