@@ -30,4 +30,3 @@ function startGame() {
     gamePlay=true;
 }
 
-gamePlay = false
