@@ -5,28 +5,63 @@ const lifeDash = document.querySelector(".lifeDash");
 const container = document.getElementById("container");
 const btnStart = document.querySelector(".btnStart");
 
-btnStart.addEventListener('click',startGame);
+btnStart.addEventListener('click', startGame);
+document.addEventListener('keydown', pressKeyOn);
+document.addEventListener('keyup', pressKeyOff);
 
-
+//Game Variables
 let animationGame = requestAnimationFrame(playGame);
-
 let gamePlay = false;
+let player = {
+    speed: 1
+    lives: 3
+    gameScore: 0,
+    carstoPass: 0
+}
 
 let keys = {
-    ArrowUp:false,
-    ArrowDown:false,
-    ArrowLeft:false,
-    ArrowRight:false
+    ArrowUp: false,
+    ArrowDown: false,
+    ArrowLeft: false,
+    ArrowRight: false
+}
+
+function startGame() {
+    console.log(gamePlay);
+    createPlayerCar();
+    gamePlay = true;
+}
+
+function createPlayerCar() {
+    btnStart.style.display = 'none';
+    var div = document.createElement('div');
+    div.setAttribute('class', 'playerCar');
+    div.x = 250;
+    div.y = 500;
+    container.appendChild(div);
+    player {
+        speed: 1,
+        lives: 3,
+        gameScore: 0,
+        carstoPass: 0
+    }
+}
+
+function pressKeyOn() {
+
+}
+
+function pressKeyOff() {
+
+}
+
+function updateDash() {
+
 }
 
 function playGame() {
     if (gamePlay) {
-      console.log("Game in play...");
+        console.log("Game in play...");
     }
-    animationGame = requestAnimationFrame(playGame);        
+    animationGame = requestAnimationFrame(playGame);
 }
-
-function startGame() {
-    gamePlay=true;
-}
-
